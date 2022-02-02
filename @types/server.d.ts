@@ -44,7 +44,7 @@ export class ServerFunctions {
    *  You **should** however treat this as an object.
    * @returns Object or Array of players
    */
-  GetQBPlayers(): PlayersObject | Player[]
+  GetUPPlayers(): PlayersObject | Player[]
 
   /**  
    *  @param {string} job: Job name to fetch on duty players for
