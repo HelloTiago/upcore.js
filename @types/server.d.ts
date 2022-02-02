@@ -17,7 +17,7 @@ export class ServerFunctions {
   GetSource(identifier: string): number | null
 
   /** 
-   * @param source: Either player's source or also accepts an identifier using QBCore.Functions.GetSource internally
+   * @param source: Either player's source or also accepts an identifier using UPCore.Functions.GetSource internally
    * @returns Player object 
    */
   GetPlayer(source: number | string): Player
@@ -59,13 +59,13 @@ export class ServerFunctions {
   GetDutyCount(job: string): number
 
   /**
-   * QBCore.Functions.GetBucketObjects
+   * UPCore.Functions.GetBucketObjects
    * @returns Routing Bucket objects for players and entities
    */
   GetBucketObjects(): [PlayerBucketObj, EntityBucketObj]
 
   /**
-   * QBCore.Functions.SetPlayerBucket
+   * UPCore.Functions.SetPlayerBucket
    * Adds the player to specified routing bucket
    * @param player_source 
    * @param bucket
@@ -74,7 +74,7 @@ export class ServerFunctions {
   SetPlayerBucket(player_source: number, bucket: number): boolean
 
   /**
-   * QBCore.Functions.SetPlayerBucket
+   * UPCore.Functions.SetPlayerBucket
    * Adds the entity to specified routing bucket
    * @param entity 
    * @param bucket
@@ -83,21 +83,21 @@ export class ServerFunctions {
   SetEntityBucket(entity: number, bucket: number): boolean
 
   /**
-   * QBCore.Functions.GetPlayersInBucket
+   * UPCore.Functions.GetPlayersInBucket
    * @param bucket Routing bucket number
    * @returns array of all player ids in the bucket
    */
   GetPlayersInBucket(bucket: number): number[]
 
   /**
-   * QBCore.Functions.GetEntitiesInBucket
+   * UPCore.Functions.GetEntitiesInBucket
    * @param bucket Routing bucket number
    * @returns array of all entity handles in the bucket or false if it is empty
    */
   GetEntitiesInBucket(bucket: number): number[] | false
 
   /**
-   * QBCore.Functions.IsPlayerInBucket
+   * UPCore.Functions.IsPlayerInBucket
    * @param player_source 
    * @param bucket 
    * @returns true if the player is in the specified bucket
@@ -105,7 +105,7 @@ export class ServerFunctions {
   IsPlayerInBucket(player_source: number, bucket: number): boolean
 
   /** 
-   * Registers a new server callback, use QBCore.Functions.TriggerCallback on the client side to trigger the callback 
+   * Registers a new server callback, use UPCore.Functions.TriggerCallback on the client side to trigger the callback 
    */
   CreateCallback(name: string, cb: (source: number, cb: Function, ...args: any[]) => void): void
 
@@ -134,7 +134,7 @@ export class ServerFunctions {
    */
   Kick(source: number, reason: string, setKickReason: Function, deferrals: any): void
 
-  /** Only use when QBCore.Config.Whitelist is set to true
+  /** Only use when UPCore.Config.Whitelist is set to true
    * @returns true if the player is whitelisted 
    */
   IsWhitelisted(source: number): boolean
@@ -375,7 +375,7 @@ export class SelfFunctions {
   GetItemBySlot(slot: number): Item | null
 
   /** 
-   * Saves the player to the database, shorthand for QBCore.Player.Save(self.PlayerData.source) 
+   * Saves the player to the database, shorthand for UPCore.Player.Save(self.PlayerData.source) 
    */
   Save(): void
 }

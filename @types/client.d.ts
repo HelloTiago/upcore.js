@@ -1,13 +1,13 @@
 import { PlayerData, Vector } from "../common/common";
 
 export class ClientFunctions {
-    /** QBCore.Functions.GetPlayerData()
+    /** UPCore.Functions.GetPlayerData()
    *  @param cb: Optional callback function with PlayerData as the argument
    *  @returns returns PlayerData object if callback is not provided 
    */
      GetPlayerData(cb?: Function): PlayerData
 
-     /** QBCore.Functions.DrawText: Draws 2D Text on the screen at given position
+     /** UPCore.Functions.DrawText: Draws 2D Text on the screen at given position
       * @param x: x coordinate
       * @param y: y coordinate
       * @param width
@@ -21,7 +21,7 @@ export class ClientFunctions {
       */
      DrawText(x: number, y: number, width: number, height: number, scale: number, r: number, g: number, b: number, a: number, text: string): void
    
-     /** QBCore.Functions.DrawText3D: Draws Floating text at given world cooridinate
+     /** UPCore.Functions.DrawText3D: Draws Floating text at given world cooridinate
       * @param x: x coordinate
       * @param y: y coordinate
       * @param z: z coordinate
@@ -30,7 +30,7 @@ export class ClientFunctions {
      DrawText3D(x: number, y: number, z: number, text: string): void
 
     /**
-     * QBCore.Functions.CreateBlip: Used to create a map blip and apply provided properties
+     * UPCore.Functions.CreateBlip: Used to create a map blip and apply provided properties
      * @param coords coordinates of blip
      * @param sprite sprite number (see https://docs.fivem.net/docs/game-references/blips/)
      * @param display display type (see https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
@@ -42,19 +42,19 @@ export class ClientFunctions {
      CreateBlip(coords: Vector, sprite:number, display: number, scale: number, colour: number, shortRange: boolean, name: string): void
 
      /**
-      * QBCore.Functions.RequestAnimDict
+      * UPCore.Functions.RequestAnimDict
       * requests an animation dictonary and waits for it to load
       * @param {string} animDict animation dictonary to load 
       */
      RequestAnimDict(animDict: string): void
 
-     /** QBCore.Functions.GetCoords
+     /** UPCore.Functions.GetCoords
       *  @param {number} entity: Entity handle
       *  @returns Vector of entity position in the world
       */
      GetCoords(entity: number): Vector
    
-     /** QBCore.Functions.SpawnVehicle: Spawns a vehicle at given position and executes a callback function 
+     /** UPCore.Functions.SpawnVehicle: Spawns a vehicle at given position and executes a callback function 
       *  @param {number} model: model hash
       *  @param cb: callback function
       *  @param coords: position vector to spawn the vehicle
@@ -62,63 +62,63 @@ export class ClientFunctions {
       */
      SpawnVehicle(model: string, cb: Function, coords?: Vector, isnetworked?: boolean): void
    
-     /** QBCore.Functions.DeleteVehicle: Deletes the specified vehicle 
+     /** UPCore.Functions.DeleteVehicle: Deletes the specified vehicle 
       *  @param vehicle: vehicle entity handle
       */
      DeleteVehicle(vehicle: number): void
    
-     /** QBCore.Functions.Notify: Displays a notification on screen 
+     /** UPCore.Functions.Notify: Displays a notification on screen 
       *  @param text: notification text
       *  @param textype: type of notification to display
       *  @param length: amount of time to display for 
       */
      Notify(text: string | Notification, textype?: string, length?: number): void
    
-     /** QBCore.Functions.TriggerCallback: Triggers a callback function 
+     /** UPCore.Functions.TriggerCallback: Triggers a callback function 
       *  @param name: Name of the registered callback
       *  @param cb: callback function
       *  @param args: optional - arguments to pass to the callback function
       */
      TriggerCallback(name: string, cb: Function, ...args: any[]): void
    
-     /** QBCore.Functions.GetVehicles
+     /** UPCore.Functions.GetVehicles
       *  @returns array of entity handles for all vehicles within scope of the client
       */
      GetVehicles(): number[]
    
-     /** QBCore.Functions.GetPeds 
+     /** UPCore.Functions.GetPeds 
       *  @param ignoreList Optional array of entity handles which will be ignored
       *  @returns array of entity handles for all peds within scope of the client that aren't on the ignore list
       */
      GetPeds(ignoreList?: number[]): number[]
    
-     /** QBCore.Functions.GetClosestVehicle
+     /** UPCore.Functions.GetClosestVehicle
       *  @param coords: position vector to find the closest vehicle to, if not specified the player position will be used
       *  @returns tuple of [entity handle, distance]
       */
      GetClosestVehicle(coords?: Vector): [number, number]
    
-     /** QBCore.Functions.GetClosestPed
+     /** UPCore.Functions.GetClosestPed
       *  @param coords: position vector to find the closest ped to, if not specified the player position will be used
       *  @param ignoreList: optional array of entities that will not be included in the search
       *  @returns tuple of [entity handle, distance]
       */
      GetClosestPed(coords?: Vector, ignoreList?: number[]): [number, number]
    
-     /** QBCore.Functions.GetClosestPlayer
+     /** UPCore.Functions.GetClosestPlayer
       *  @param coords: position vector to find the closest player ped to, if not specified the player position will be used
       *  @returns tuple of [entity handle, distance]
       */
      GetClosestPlayer(coords?: Vector): [number, number]
      
-     /** QBCore.Functions.GetClosestObject
+     /** UPCore.Functions.GetClosestObject
       *  @param coords: position vector to find the closest object to, if not specified the player position will be used
       *  @returns tuple of [entity handle, distance]
       */
      GetClosestObject(coords?: Vector): [number, number]
 
      /**
-      * QBCore.Functions.GetClosestBone
+      * UPCore.Functions.GetClosestBone
       * @param entity entity handle 
       * @param list array of bone indexes
       * @returns boneIndex, coords, distance 
@@ -126,7 +126,7 @@ export class ClientFunctions {
      GetClosestBone(entity: number, list: number[]): [number, Vector, number]
 
      /**
-      * QBCore.Functions.GetBoneDistance
+      * UPCore.Functions.GetBoneDistance
       * @param entity entity handle 
       * @param Type takes a value of '1' to return the bone index from a bone id, any other value and it will get the bone index from the bone name
       * @param Bone if Type is 1 then Bone is the boneId otherwise Bone is the name of the bone
@@ -134,20 +134,20 @@ export class ClientFunctions {
       */
      GetBoneDistance(entity: number, Type: number, Bone: number | string): number
      
-     /** QBCore.Functions.GetPlayersFromCoords
+     /** UPCore.Functions.GetPlayersFromCoords
       *  @param coords: position vector to search for players within
       *  @param distance: radius of area to search within
       *  @returns array of entity handles for all players within the specified distance of the given coords
       */
      GetPlayersFromCoords(coords: Vector, distance: number): number[]
    
-     /** QBCore.Functions.HasItem 
+     /** UPCore.Functions.HasItem 
       *  @param item: Name of item to check for
       *  @returns true if the player has the item, false otherwise
       */
      HasItem(tem: string): boolean
    
-     /** QBCore.Functions.ProgressBar: Displays a progress bar on screen
+     /** UPCore.Functions.ProgressBar: Displays a progress bar on screen
       *  @param name: Name of the progress bar
       *  @param label: Label to be displayed on the progressbar
       *  @param duration: Duration of the progress bar
@@ -162,27 +162,27 @@ export class ClientFunctions {
       */
      Progressbar(name: string, label: string, duration: number, useWhileDead: boolean, canCancel: boolean, disableControls: any, animation: any, prop: any, propTwo: any, onFinish: Function, onCancel: Function): void
      
-     /** QBCore.Functions.GetPlate 
+     /** UPCore.Functions.GetPlate 
       *  @param vehicle: vehicle entity handle
       *  @returns vehicle license plate trimmed of tailing whitespaces or null if the vehicle handle is invalid
       */
      GetPlate(vehicle: number): string | null
 
      /**
-      * QBCore.Functions.SpawnClear:
+      * UPCore.Functions.SpawnClear:
       * Checks if an area is clear of obstructions within a given area
       * @param coords 
       * @param radius 
       */
      SpawnClear(coords: Vector, radius: number): boolean
 
-     /** QBCore.Functions.GetVehicleProperties 
+     /** UPCore.Functions.GetVehicleProperties 
       *  @param vehicle: vehicle entity handle
       *  @returns vehicle properties object or null if the vehicle handle is invalid
       */
      GetVehicleProperties(vehicle: number): VehicleProperties | null
    
-     /** QBCore.Functions.SetVehicleProperties: Setter for GetVehicleProperties, applies properties to the vehicle 
+     /** UPCore.Functions.SetVehicleProperties: Setter for GetVehicleProperties, applies properties to the vehicle 
       *  @param vehicle: vehicle entity handle
       *  @param properties: vehicle properties object
       */

@@ -1,20 +1,20 @@
 export class Shared {
   /** 
-   * QBCore.Shared.RandomStr
+   * UPCore.Shared.RandomStr
    * @param {number} length: length of the random string
    * @returns {string} string of random characters of the given length
    */
   RandomStr(length: number): string
 
   /** 
-   * QBCore.Shared.RandomInt
+   * UPCore.Shared.RandomInt
    * @param {number} length: length of the random integer
    * @returns {number} random integer of the given length
    */
   RandomInt(length: number): number
 
   /** 
-   * QBCore.Shared.SplitStr
+   * UPCore.Shared.SplitStr
    * @param {string} str: string to split
    * @param {string} delimiter: point at which to split the string
    * @returns {string[]} array containing the two halves of the split string 
@@ -22,7 +22,7 @@ export class Shared {
   SplitStr(str: string, delimiter: string): string[]
 
   /** 
-   * QBCore.Shared.Round
+   * UPCore.Shared.Round
    * @param {number} num: number to be rounded
    * @param {number} decimal_places: optional number of decimal places to round to
    * @return {number} rounded number
@@ -30,7 +30,7 @@ export class Shared {
   Round(num: number, decimal_places?: number): number
 
   /** 
-   * QBCore.Shared.Trim:
+   * UPCore.Shared.Trim:
    * It would however be easier to use the .trim() method of the string class in v8
    * @param {string} str: string to be trimmed
    * @returns {string}: trimmed string with whitespace removed 
@@ -38,7 +38,7 @@ export class Shared {
   Trim(str: string): string
 
   /**
-   * QBCore.Shared.ChangeVehicleExtra
+   * UPCore.Shared.ChangeVehicleExtra
    * @param vehicle Entity Handle
    * @param extra Vehicle Extra ID
    * @param enable Toggle on / off
@@ -46,7 +46,7 @@ export class Shared {
   ChangeVehicleExtra(vehicle: number, extra: number, enable: boolean)
 
   /**
-   * QBCore.Shared.SetDefaultVehicleExtras:
+   * UPCore.Shared.SetDefaultVehicleExtras:
    * Applies vehicle extras to a list
    * @param vehicle Entity Handle
    * @param config Object with the key as the extra id and value as the state
